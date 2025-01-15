@@ -7,7 +7,7 @@ import CaptainSignUp from "./components/CaptainSignUp"
 
 
 function App() {
-
+  
   return (
     <div>
       <Routes>
