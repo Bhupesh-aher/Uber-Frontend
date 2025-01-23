@@ -9,6 +9,7 @@ import UserProtectedWrapper from "./components/UserProtectedWrapper"
 import UserLogout from "./components/UserLogout"
 import CaptainHome from "./components/CaptainHome"
 import CaptainProtectedWrapper from "./components/CaptainProtectedWrapper"
+import Riding from "./components/Riding"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Start/>}/>
         <Route path="/login" element={<UserLogin/>}/>
+        <Route path="/riding" element={<Riding/>}/>
         <Route path="/signup" element={<UserSignUp/>}/>
         <Route path="/captain-login" element={<CaptainLogin/>}/>
         <Route path="/captain-signup" element={<CaptainSignUp/>}/>
