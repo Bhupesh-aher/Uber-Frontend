@@ -68,30 +68,30 @@ const CaptainSignUp = () => {
 
         <h3 className='text-lg font-medium mb-2'>What's our Captian's Name</h3>
         <div className='flex gap-4 mb-4' >
-          <input value={firstName} onChange={(e) => setFirstName(e.target.value)} required className='bg-[#eeeeee] w-1/2  rounded px-4 py-2 border text-lg  placeholder:text-base' type="text" placeholder='First Name'/>
-          <input value={lastName} onChange={(e) => setLastName(e.target.value)} required className='bg-[#eeeeee] w-1/2  rounded px-4 py-2 border text-lg  placeholder:text-base' type="text" placeholder='Last Name'/>
+          <input value={firstName} onChange={(e) => {setFirstName(e.target.value)}} required className='bg-[#eeeeee] w-1/2  rounded px-4 py-2 border text-lg  placeholder:text-base' type="text" placeholder='First Name'/>
+          <input value={lastName} onChange={(e) => {setLastName(e.target.value)}} required className='bg-[#eeeeee] w-1/2  rounded px-4 py-2 border text-lg  placeholder:text-base' type="text" placeholder='Last Name'/>
 
         </div>
 
             <h3 className='text-lg font-medium mb-2'>What's our Captian's  Email</h3>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="email" placeholder='user@gmail.com'/>
+            <input value={email} onChange={(e) => {setEmail(e.target.value)}} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="email" placeholder='user@gmail.com'/>
 
 
             <h3 className='text-lg font-medium mb-2'>Enter Password</h3>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="password" placeholder='Password'/>
+            <input value={password} onChange={(e) => {setPassword(e.target.value)}} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="password" placeholder='Password'/>
 
             <h3 className='text-lg font-medium mb-2'>Vehicle Information</h3>
             <div className='flex gap-4 mb-7'>
-              <input value={vehicleColor} onChange={(e) => setVehicleColor(e.target.value)} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="text" placeholder='Vehicle Color'/>
-              <input value={vehiclePlate} onChange={(e) => setVehiclePlate(e.target.value)} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="text" placeholder='Vehicle Plate'/>
+              <input value={vehicleColor} onChange={(e) => {setVehicleColor(e.target.value)}} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="text" placeholder='Vehicle Color'/>
+              <input value={vehiclePlate} onChange={(e) => {setVehiclePlate(e.target.value)}} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="text" placeholder='Vehicle Plate'/>
 
               </div>
 
             <div className='flex gap-4 mb-7'>
 
-              <input value={vehicleCapacity} onChange={(e) => setVehicleCapacity(e.target.value)} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="number" placeholder='Vehicle Capacity'/>
-              <select value={vehicleType} onChange={(e) => setVehicleType(e.target.value)} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base'>
-                  <option value="" >Select Vehcile Type</option>
+              <input value={vehicleCapacity} onChange={(e) => {setVehicleCapacity(e.target.value)}} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base' type="number" placeholder='Vehicle Capacity'/>
+              <select value={vehicleType} onChange={(e) => {setVehicleType(e.target.value)}} required className='bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base'>
+                  <option value="" disabled>Select Vehcile Type</option>
                   <option value="car">Car</option>
                   <option value="auto">Auto</option>
                   <option value="motorcycle">Motorcycle</option>
@@ -109,7 +109,7 @@ const CaptainSignUp = () => {
             <p className='text-center'>Already Captain?  <Link to={"/captain-login"} className='text-blue-600'>Login Here</Link></p>
     </div>
     <div>
-      <p  className='text-[sm] leading-tight'>This iste is protected by reCAPTCHA and the <span className='underline'>google privacy policy</span> and <span className='underline'>Terms of service apply</span></p>
+      <p  className='text-[sm] mt-6 leading-tight'>This iste is protected by reCAPTCHA and the <span className='underline'>google privacy policy</span> and <span className='underline'>Terms of service apply</span></p>
     </div>
 </div>
   )
