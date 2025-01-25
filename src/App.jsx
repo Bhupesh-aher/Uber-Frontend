@@ -10,16 +10,20 @@ import UserLogout from "./components/UserLogout"
 import CaptainHome from "./components/CaptainHome"
 import CaptainProtectedWrapper from "./components/CaptainProtectedWrapper"
 import Riding from "./components/Riding"
+import CaptainRiding from "./components/CaptainRiding"
+import 'remixicon/fonts/remixicon.css'
+
 
 
 function App() {
-  
+ 
   return (
     <div>
       <Routes>
         <Route path="/" element={<Start/>}/>
         <Route path="/login" element={<UserLogin/>}/>
         <Route path="/riding" element={<Riding/>}/>
+        <Route path="/captain-riding" element={<CaptainRiding/>}/>
         <Route path="/signup" element={<UserSignUp/>}/>
         <Route path="/captain-login" element={<CaptainLogin/>}/>
         <Route path="/captain-signup" element={<CaptainSignUp/>}/>
