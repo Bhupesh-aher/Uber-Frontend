@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -9,6 +9,8 @@ import ConfirmedRide from './ConfirmedRide';
 import LookingForDriver from './LookingForDriver';
 import WaitingForDriver from './WaitingForDriver';
 import axios from 'axios';
+import { SocketContext } from '../context/SocketContext';
+import { UserDataContext } from '../context/UserContext';
 
 const Home = () => {
 
@@ -30,7 +32,23 @@ const Home = () => {
   const [ activeField, setActiveField ] = useState(null)
   const [ fare, setFare ] = useState({})
   const [ vehicleType, setVehicleType ] = useState(null)
+  const [ride, setRide] = useState(null)
 
+  const {socket} = useContext(SocketContext)
+  const {user} = useContext(UserDataContext)
+  
+
+  useEffect(() => {
+    socket.emit("join", {userType: "user", userId: user._id})
+  }, [user])
+
+  socket.on('ride-confirmed', ride => {
+    setVehicleFound(false)
+    setWaitingForDriver(true)
+    console.log(ride);
+    
+    setRide(ride)
+  }) 
   
   
   const handlePickupChange = async (e) => {
@@ -159,7 +177,7 @@ const handleDestinationChange = async (e) => {
             Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       })
-      console.log(response.data);
+      // console.log(response.data);
       setFare(response.data)
       
   }
@@ -176,7 +194,7 @@ const handleDestinationChange = async (e) => {
       }
     })
 
-    console.log(response.data);
+    // console.log(response.data);
     
     
   }
@@ -249,7 +267,12 @@ const handleDestinationChange = async (e) => {
       </div>
 
       <div ref={waitingForDriverRef}  className='fixed w-full z-10 bottom-0  bg-white px-3 py-6 pt-12'>
-          <WaitingForDriver setWaitingForDriver={setWaitingForDriver}/>
+          <WaitingForDriver 
+          ride={ride}
+          setVehicleFound={setVehicleFound}
+          setWaitingForDriver={setWaitingForDriver}
+          waitingForDriver={waitingForDriver}
+          />
       </div>
 
     </div>
