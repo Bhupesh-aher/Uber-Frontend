@@ -12,6 +12,7 @@ import axios from 'axios';
 import { SocketContext } from '../context/SocketContext';
 import { UserDataContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom'
+import LiveTracking from './LiveTracking';
 
 
 const Home = () => {
@@ -219,6 +220,7 @@ const handleDestinationChange = async (e) => {
       <div className='h-screen w-screen'>
         {/* temp image  */}
         <img className='h-full w-full object-cover' src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="" />
+        {/* <LiveTracking/> */}
       </div>
 
       <div className='flex flex-col justify-end h-screen absolute top-0 w-full '>
